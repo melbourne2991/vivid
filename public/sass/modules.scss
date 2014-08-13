@@ -1,0 +1,160 @@
+#wrapper {
+	height: 100%;
+	padding-top: 95px;
+	background: $background_color;
+}
+
+#header {
+	transition: all 0.3s;
+	position: fixed;
+	width: 100%;
+	top:0;
+	background: $base_color;
+	height: 95px;
+	color: #fff;
+
+	.inner {
+		height: 95px;	
+		position: relative;
+	}
+	.nav {
+		padding: 10px 0 10px 10px;
+		position: absolute;
+		bottom: 10px;
+		right: 20px;
+	  	letter-spacing: 0.1em;
+
+		// background: 
+		ul {
+			@include horizontal-menu();
+			text-transform: uppercase;
+			font-size: 0.8em;
+			li {
+				margin-right: 10px;
+				color: #fff;
+				text-decoration: none;
+
+				a {
+					color: #fff;
+					text-decoration: none;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}		
+	}
+}
+
+#header.collapsed {
+	height: 52px;
+
+
+	.inner {
+		height: 52px;
+	}
+
+	#logo {
+		line-height: 1;
+		width: 110px;
+		padding: 7px 10px 10px 10px;
+		top: 9px;
+		bottom: 10px;
+	}
+}
+
+#body.header-collapsed {
+	margin-top: 52px;
+}
+
+#logo {
+	img {
+		width: 100%;
+	}
+	transition: all 0.3s;
+	padding: 13px 10px 10px 10px;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	width: 100px;
+	left: 20px;
+	bottom: 20px;
+	position: absolute;
+	width: 150px;
+}
+
+#body {
+	height: 100%;
+}
+
+#hero {
+	height: 300px;
+	background: url('../img/use_your_illusion.png');
+}
+
+.post {
+	cursor: pointer;
+	margin-bottom: 20px;
+	background: darken(#fff, 7%);
+	border: 1px darken(#fff, 15%) solid;
+	border-radius: 5px;
+	transition: background .5s;
+
+	&:hover {
+		background: darken(#fff, 3%);
+	}
+
+	.header, .content, .meta {
+		padding: 10px 10px 0 10px;
+	}
+
+	h3 {
+		margin: 0;
+	}
+
+	.meta {
+		padding-bottom: 10px;
+		color: lighten(#000, 40%);
+		font-size: 12px;
+
+		@include clearfix();
+
+		.date {
+			padding-top: 3px;
+			width: 60%;
+			float: left;
+			display: block;
+			padding-right: 5px;
+			.icon-date {
+				margin-right: 5px;
+				float: left;
+			}
+		}
+
+		.comments {
+			padding-top: 3px;
+			width: 40%;
+			float: left;
+			display: block;
+			padding-left: 5px;
+			.icon-comments {
+				display: inline-block;
+				margin-right: 5px;
+				float: left;
+			}
+		}
+	}
+}
+
+.icon-date {
+	width: 25px
+}
+
+.icon-comments {
+	width: 20px;
+}
+
+.container {
+	@include clearfix();
+	padding: 20px 10px;
+}

@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="col-24-24" data-ng-repeat="column in row">
+		<h2>Recent Posts</h2>
+	</div>
+
+	<div data-row-css-class="row" 
+		 data-column-css-class="col-24-24 col-md-12-24 col-lg-6-24"
+		 data-columns-to-row="4"
+		 data-grid-repeat="post in posts">
+		 	<div class="post">
+				<div class="header"><h3>{{ post.title }}</h3></div>
+				<div class="content">{{ post.content }}</div>
+				<div class="meta">
+					<div class="date"><img src="img/calendar_icon.svg" class="icon-date">{{ post.date }}</div>
+				</div>
+			</div>
+	</div>
+</div>
